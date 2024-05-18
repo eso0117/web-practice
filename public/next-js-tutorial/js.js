@@ -1,5 +1,5 @@
 let onAnswerClicked = (event) => {
-  const button = event.target;
+  const button = event.currentTarget;
   const questionNumber = button.getAttribute("data-question");
   const options = document.querySelectorAll(
     `[data-question-number='${questionNumber}']`
@@ -11,7 +11,7 @@ let onAnswerClicked = (event) => {
 };
 
 let onOptionClick = (event) => {
-  const target = event.target;
+  const target = event.currentTarget;
   const questionNumber = target.getAttribute("data-question-number");
 
   const options = document.querySelectorAll(
