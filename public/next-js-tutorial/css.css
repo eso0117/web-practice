@@ -179,6 +179,32 @@ li {
   margin: auto !important;
 }
 
+.is-inactive {
+  display: none;
+}
+
+.hint {
+  padding: 12px;
+  font-size: 12px;
+  border-radius: 8px;
+  border: 1px solid #ebebeb;
+}
+
+.btn {
+  padding: 14px;
+  background: black;
+  color: white !important;
+  text-decoration: nont !important;
+  cursor: pointer;
+  border-radius: 8px;
+  font-size: 14px;
+}
+
+.show-and-hide-btn {
+  margin-top: 48px;
+  margin-bottom: 48px;
+}
+
 @media screen and (max-width: 600px) {
   .quiz__btn-container {
     text-align: center;
