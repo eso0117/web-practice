@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>스크롤 연습 01</title>
+</head>
+<body>
+    <section class="container mx-auto bg-slate-50 mt-4 mb-4">
+        <div class="section-title bg-blue-500 px-4 py-4">
+            <h1 class="text-3xl font-bold underline">
+                Section 1
+            </h1>
+        </div>
+        <div class="section-contents grid grid-cols-6 gap-4 px-4 py-4">
+            <div class="content col-span-6 h-48 bg-blue-300"></div>
+            <div class="content col-span-6 h-56 bg-red-300"></div>
+            <div class="content col-span-6 h-48 bg-blue-300"></div>
+            <div class="content col-span-6 h-56 bg-red-300"></div>
+            <div class="content col-span-6 h-48 bg-blue-300"></div>
+            <div class="content col-span-6 h-56 bg-red-300"></div>
+        </div>
+    </section>
+    <section class="container mx-auto bg-slate-50 mt-4 mb-4">
+        <div class="section-title bg-blue-500 px-4 py-4">
+            <h1 class="text-3xl font-bold underline">
+                Section 2
+            </h1>
+        </div>
+        <div class="section-contents grid grid-cols-6 gap-4 px-4 py-4">
+            <div class="content col-span-4 h-36 bg-yellow-300"></div>
+            <div class="content col-span-2 h-36 bg-green-300"></div>
+            <div class="content col-span-6 h-56 bg-red-300"></div>
+            <div class="content col-span-6 h-24 bg-red-300"></div>
+        </div>
+    </section>
+    <section class="container mx-auto bg-slate-50 mt-4 mb-4">
+        <div class="section-title bg-blue-500 px-4 py-4">
+            <h1 class="text-3xl font-bold underline">
+                Section 3
+            </h1>
+        </div>
+        <div class="section-contents grid grid-cols-6 gap-4 px-4 py-4">
+            <div class="content col-span-6 h-48 bg-blue-300"></div>
+            <div class="content col-span-2 h-36 bg-yellow-300"></div>
+            <div class="content col-span-4 h-36 bg-green-300"></div>
+            <div class="content col-span-6 h-56 bg-red-300"></div>
+            <div class="content col-span-3 h-56 bg-purple-300"></div>
+            <div class="content col-span-3 h-56 bg-cyan-300"></div>
+        </div>
+    </section>
+
+    <section class="container mx-auto bg-slate-50 mt-4 mb-4">
+        <div class="section-contents grid grid-cols-6 gap-4 px-4 py-4">
+            <div class="content footer col-span-6 h-48 bg-gray-300"></div>
+        </div>
+    </section>
+
+    <style>
+        section {
+            position: relative;
+            overflow: auto;
+        }
+
+        .content {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1rem;
+            border-radius: 0.25rem;
+        }
+
+        .content:after {
+            content: "content";
+            font-weight: bold;
+        }
+
+        .footer:after {
+            content: "Footer";
+        }
+
+        .section-title {
+            height: 68px;
+            width: inherit;
+            max-width: inherit;
+        }
+
+        .focused .section-title {
+            top: 0;
+            position: fixed;
+        }
+
+        .focused .section-contents, .gone .section-contents {
+            margin-top: 68px;
+        }
+
+       .gone .section-title {
+            position: absolute;
+            bottom: 0;
+        }
+    </style>
+
+    <script>
+        let handleFocusForSection = () => {
+            const sections = document.getElementsByTagName("section");
+            Array.prototype.forEach.call(sections, (element) => {
+                var rect = element.getBoundingClientRect();
+              
+                if (rect.y >= 0) {
+                    element.classList.remove("focused");
+                    element.classList.remove("gone")
+                } else if (rect.y < 0 && rect.y > (element.clientHeight - 68) * -1) {
+                    element.classList.add("focused");
+                    element.classList.remove("gone")
+                } else {
+                    element.classList.remove("focused");
+                    element.classList.add("gone")
+                }
+
+            })
+        }
+
+        let scrollEventListener = () => {
+            handleFocusForSection();
+        }
+
+        window.addEventListener('scroll', scrollEventListener)
+    </script>
+</body>
+</html>
