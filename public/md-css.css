@@ -5,3 +5,10 @@
     cursor: pointer;
     padding: 12px;
 }
+
+.hint {
+    padding: 12px;
+    font-size: 12px;
+    border-radius: 8px;
+    border: 1px solid #ebebeb;
+}
