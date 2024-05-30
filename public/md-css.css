@@ -22,3 +22,16 @@ code {
 li > ul li {
     list-style: circle;
 }
+
+.overview {
+    padding: 8px;
+    background-color: #FAFAFA;
+}
+
+.overview > ul li {
+    font-size: 14px;
+}
+
+.overview > ul li > ul li {
+    font-size: 12px;
+}
