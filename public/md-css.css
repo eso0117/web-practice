@@ -18,3 +18,7 @@ code {
     padding: 2px 4px;
     border-radius: 4px;
 }
+
+li > ul li {
+    list-style: circle;
+}
