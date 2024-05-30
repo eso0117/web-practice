@@ -27,6 +27,8 @@ li > ul li {
 .overview {
     padding: 8px;
     background-color: #FAFAFA;
+    border-radius: 8px;
+    border: 1px solid #ebebeb;
 }
 
 .overview > ul li {
