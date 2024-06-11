@@ -33,8 +33,8 @@ let onAnswerClicked = (event) => {
       `[data-hide-target='${dataTarget}']`
     );
 
-    const hideText = buttonContent.getAttribute("data-hide-text");
-    const showText = buttonContent.getAttribute("data-show-text")
+    const hideText = buttonContent.attr("data-hide-text");
+    const showText = buttonContent.attr("data-show-text")
     const isHidden = buttonContent.html() === hideText;
     
   
