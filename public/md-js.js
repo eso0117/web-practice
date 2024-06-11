@@ -35,13 +35,13 @@ let onAnswerClicked = (event) => {
 
     const hideText = buttonContent.attr("data-hide-text");
     const showText = buttonContent.attr("data-show-text")
-    const isHidden = buttonContent.html() === hideText;
+    const isHidden = buttonContent.html() === showText;
     
   
     if (isHidden) {
-      buttonContent.html(showText);
-    } else {
       buttonContent.html(hideText);
+    } else {
+      buttonContent.html(showText);
     }
   
     Array.prototype.forEach.call(targetElems, (element) => {
